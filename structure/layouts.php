@@ -14,5 +14,14 @@
             <body>
             <?php
     }
+    public function footer(){
+        ?>
+        <div class="footer">
+            Copyright &copy; ICS <?php print date("Y"); ?>
+        </div>
+    </body>
+    </html>
+        <?php
+    }
  }
 ?>
