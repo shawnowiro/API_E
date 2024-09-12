@@ -1,16 +1,16 @@
-body {
+body{
   margin: 0;
 }
-* {
+*{
   box-sizing: border-box;
 }
 
-.topnav {
+.topnav{
   background-color: black;
   overflow: hidden;
 }
 
-.topnav a {
+.topnav a{
   color: azure;
   float: left;
   display: block;
@@ -19,12 +19,16 @@ body {
   padding: 14px 16px;
 }
 
-.topnav a:hover {
-  color: black;
+.topnav a:hover{
+  color:black;
   background-color: azure;
 }
 
-.footer {
+.topnav-right{
+  float: right;
+}
+
+.footer{
   background-color: black;
   padding: 20px;
   text-align: center;

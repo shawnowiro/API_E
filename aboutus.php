@@ -5,4 +5,3 @@
     $ObjContents->about_content();
     $ObjContents->sidebar();
     $ObjLayouts->footer();
-    ?>
