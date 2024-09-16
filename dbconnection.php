@@ -22,24 +22,26 @@ class dbConnection{
         switch($this->db_type){
             case 'MySQLi':
                 if($this->db_port != null){
-                    $this->db_host = $this->db_host . ":" . $this->db_port;
+                    $this->db_host .= $this->db_host . ":" . $this->db_port;
                 }
-                $connection = new mysqli($this->db_host, $this->db_user, $this->db_pass, $this->db_name);
-                if($connection->connect_error){
-                    die("Connection failed: " . $connection->connect_error);
+                $this->connection = new mysqli($this->db_host, $this->db_user, $this->db_pass, $this->db_name);
+                if($this->connection->connect_error){
+                    die("Connection failed: " . $this->connection->connect_error);
                 }else{
-                    return $connection;
+                    return $this->connection;
                 }
+
+                break;
         
             case 'PDO':
                 if($this->db_port != null){
                     $this->db_host = $this->db_host . ":" . $this->db_port;
                 }
                 try {
-                    $connection = new PDO("mysql:host=" . $this->db_host . ";dbname=" . $this->db_name, $this->db_user, $this->db_pass);
+                    $this->connection = new PDO("mysql:host=" . $this->db_host . ";dbname=" . $this->db_name, $this->db_user, $this->db_pass);
                     // set the PDO error mode to exception
-                    $connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    return $connection;
+                    $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    return $this->connection;
                 } catch(PDOException $e) {
                     die("Connection failed: " . $e->getMessage());
                 }
