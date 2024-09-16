@@ -30,7 +30,7 @@ class dbConnection{
                 }else{
                     return $connection;
                 }
-                break;
+        
             case 'PDO':
                 if($this->db_port != null){
                     $this->db_host = $this->db_host . ":" . $this->db_port;
@@ -43,7 +43,8 @@ class dbConnection{
                 } catch(PDOException $e) {
                     die("Connection failed: " . $e->getMessage());
                 }
-                break;
+ 
+            
         }
     }
 }

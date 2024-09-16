@@ -64,6 +64,11 @@ class contents
 
                 // Prepare and execute the insert query
                 $stmt = $conn->prepare("INSERT INTO users (First_name, Last_name, Email, password, phone) VALUES (?, ?, ?, ?, ?)");
+                if (!$stmt) {
+                    echo "Error: " . $conn->error;
+                } else {
+                    echo "New record created successfully";
+                }
                 $stmt->bind_param("sssss", $firstName, $lastName, $email, $password, $phone);
                 $stmt->execute();
                 $stmt->close();
@@ -71,7 +76,7 @@ class contents
             }
         ?>
             <div class="form-wrapper">
-                <form method="POST"> <!-- Added method POST -->
+                <form action=" " method="POST"> <!-- Added method POST -->
                     <div class="form-group">
                         <label for="firstName">First Name</label>
                         <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter first name"> <!-- Added name attribute -->
