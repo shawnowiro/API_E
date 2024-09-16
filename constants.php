@@ -1,9 +1,7 @@
 <?php 
-    define('DBTYPE','pdo');
-    define('HOSTNAME','localhost');
-    define('DBNAME','userdb');
-    define('HOSTUSER','root');
-    define('HOSTPASS','Ochiengowiro37')
+    define('DBSEVERNAME','pdo');
+    define('USERNAME','localhost');
+    define('PASSWORD','userdb');
 
 
 

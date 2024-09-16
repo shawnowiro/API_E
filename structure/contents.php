@@ -48,12 +48,12 @@ class contents
             </div>
         <?php
         }
-        public function Signup_content()
+        public function Signup_content($conn)
         {
             // Check if the form is submitted
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Include database connection
-                include 'dbconnection.php';
+                //include 'dbconnection.php';
 
                 // Get form data
                 $firstName = $_POST['firstName'];
